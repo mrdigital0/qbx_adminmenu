@@ -514,12 +514,7 @@ lib.callback.register('qbx_admin:client:SaveCarDialog', function()
 end)
 
 lib.callback.register('qbx_admin:client:GetVehicleInfo', function()
-
-    local aheadVehHash = GetEntityModel(cache.vehicle)
-    local aheadVehName = GetDisplayNameFromVehicleModel(aheadVehHash)
-    local aheadVehNameText = GetLabelText(aheadVehName)
-    return aheadVehNameText:lower(), lib.getVehicleProperties(cache.vehicle)
-
+    return GetEntityArchetypeName(cache.vehicle), lib.getVehicleProperties(cache.vehicle)
 end)
 
 CreateThread(function()
